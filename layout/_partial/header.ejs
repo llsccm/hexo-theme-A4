@@ -5,10 +5,11 @@
 <% } %>
 <a class="index-logo" href="<%- url_for() %>"><%= config.title %></a>
 <div class="index-header">
-    首页
-    <% for (name in theme.menu) { %>
-        <% if(name !== '首页' && theme.showInMenu.includes(name)) { %>
-            &nbsp / &nbsp<a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+    <% if(theme.menu != "" && theme.showInMenu != null) { %>
+        <% for (name in theme.menu) { %>
+            <% if(theme.showInMenu.includes(name)) { %>
+                &nbsp / &nbsp<a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+            <% } %>
         <% } %>
     <% } %>
 </div>

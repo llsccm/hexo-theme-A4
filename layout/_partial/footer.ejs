@@ -15,22 +15,17 @@
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     <% if(path == 'index.html'){ %>
-         <% if(theme.index.footer != null || theme.index.footer != "") { %>
-            <% if(theme.index.footer.length > "Email:".length && theme.index.footer.substring(0, 6) == "Email:") { %>
-                <% var email = theme.index.footer.substring(6, theme.index.footer.length) %>
-                <span class="index-footer-last-span">Email:<%- mail_to(email) %></span>
-            <% } else { %>
-                <span class="index-footer-last-span"><%= theme.index.footer %></span>
-            <% } %>
+        <% for(var y in theme.contact){ %>
+            <a href="<%=theme.contact[y][0]%>" target="_blank">
+                <i class="<%=theme.contact[y][1]%>"></i>
+            </a>
         <% } %>
     <% } else { %>
-        <span style="border-top: 1px solid var(--line-1); margin-top: -30px;"></span>
-        <div style="display: float;">
-            <span style="float: left; font-size: 10px;"><%= theme.post.footer %></span>
-            <% if(theme.post.themeInfo) { %>
-                <span class="footer-last-span-right"><i>本站由<a href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
-            <% } %>
-        </div>
+        <% if(theme.post.themeInfo) { %>
+            <div class="footer-last-span-right">
+                <i>Power by <a href="https://hexo.io/zh-cn/index.html">Hexo</a> | Theme by <a href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a></i>
+            </div>
+        <% } %>
     <% } %>
 </div>
 
