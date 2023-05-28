@@ -3,10 +3,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="description" content="<%= page.title %>" />
     <link rel="shortcut icon" type="image/x-icon" href="<%- url_for(theme.favicon) %>">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/@fontsource/gothic-a1@4.5.9/600.min.css" rel="stylesheet"> -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <title><%= config.title %> | <%= config.subtitle %></title>
-
+    <%- css('css/normalize.css') %>
+    <%- css('css/style.css') %>
+    <%- css('css/markdown.css') %>
+    <%- css('css/ui.css') %>
+    <%- css('css/a11y-dark.min.css') %>
     <% if(theme.cdn.enable && theme.cdn.choose != "") { %>
         <% if(theme.cdn.choose == "aliyun") { %>
             <%- css('https://npm.elemecdn.com/hexo-theme-a4@latest/source/css/reset.css') %>
@@ -19,7 +21,6 @@
         <% } else if(theme.cdn.choose == "jsdelivr") { %>
             <%- css('https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css') %>
             <%- css('https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css') %>
-            <%- css('https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css') %> 
             <!--注意：首页既不是post也不是page-->
             <% if((is_post() || is_page()) && theme.comment.enable && (!page.hasOwnProperty('comment') ||(page.hasOwnProperty('comment') && page.comment))) { %>
                 <%- css('https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/waline.css') %>
@@ -34,14 +35,10 @@
             <% } %>
         <% } %>
     <% } else { %>
-        <%- css('css/reset.css') %>
-        <%- css('css/markdown.css') %>
-        <%- css('css/fonts.css') %> 
          <!--注意：首页既不是post也不是page-->
         <% if((is_post() || is_page()) && theme.comment.enable && (!page.hasOwnProperty('comment') ||(page.hasOwnProperty('comment') && page.comment))) { %>
             <%- css('css/waline.css') %>
         <% } %>
     <% } %>
-    <%- css('css/ui.css') %> 
-    <%- css('css/style.css') %>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
