@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+:root {
+  --color-border-muted: hsla(210, 18%, 87%, 1);
+}
+
 .post-md {
   width: 100%;
   font-size: 16px;
@@ -14,34 +18,37 @@
 .post-md h6 {
   color: var(--font-color-1);
   margin: 12px 0;
+  font-weight: 600;
 }
 
 .post-md h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1.2;
   padding: 14px 0;
+  border-bottom: 1px solid var(--color-border-muted);
 }
 
 .post-md h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   padding: 10px 0;
+  border-bottom: 1px solid var(--color-border-muted);
 }
 
 .post-md h3 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   line-height: 1.2;
   padding: 8px 0;
 }
 
 .post-md h4 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.2;
   padding: 6px 0;
 }
 
 .post-md h5 {
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   line-height: 1.2;
   padding: 4px 0;
 }
@@ -53,20 +60,37 @@
 }
 
 .post-md a {
-  color: var(--font-color-2);
-  box-shadow: 0 2px 0 var(--line-1);
+  display: inline-block;
+  position: relative;
+  /* color: var(--font-color-2); */
+  /* box-shadow: 0 2px 0 var(--line-1); */
   /* transition: color ease-in-out .65s, box-shadow ease-in-out .65s; */
 }
 
-.post-md a:visited {
-  color: var(--font-color-2);
+.post-md a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  border-bottom: 2px solid var(--line-1);
+  bottom: 0;
+  left: 0;
+  transition: 0.2s all linear;
 }
 
-.post-md a:hover {
+.post-md a:hover::after {
+  width: 100%;
+}
+
+/* .post-md a:visited {
+  color: var(--font-color-2);
+} */
+
+/* .post-md a:hover {
   color: var(--font-color-0);
   box-shadow: 0 2px 0 var(--font-color-0);
   transition: color ease-in-out .65s, box-shadow ease-in-out .65s;
-}
+} */
 
 .post-md strong {
   font-weight: 700;
