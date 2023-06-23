@@ -19,12 +19,12 @@ index:
 
 # 联系方式 更多图标：https://remixicon.com/
 contact:
-  # Github:
-  #   - https://github.com/llsccm
-  #   - ri-github-line
-  # Email:
-  #   - mailto:p8203@qq.com
-  #   - ri-mail-line
+  Github:
+    - https://github.com/llsccm
+    - ri-github-line
+  Email:
+    - mailto:p8203@qq.com
+    - ri-mail-line
 
 # 底部的链接自定义
 footerLink:
